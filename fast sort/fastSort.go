@@ -23,7 +23,6 @@ func selectionSort(arr []int) []int {
 		i--
 	}
 	return newArr
-
 }
 
 func main() {
