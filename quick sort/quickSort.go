@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func quickSort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
@@ -14,11 +16,12 @@ func quickSort(arr []int) []int {
 				more = append(more, v)
 			}
 		}
-		return (quickSort(less) + pivot) + quickSort(more)
+		return append(append(quickSort(less), pivot), quickSort(more)...)
 
 	}
 }
 
 func main() {
-
+	mas := []int{1, 78, 2, 64, 85, 35, 7, 900}
+	fmt.Println(quickSort(mas))
 }
