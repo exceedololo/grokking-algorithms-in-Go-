@@ -40,7 +40,8 @@ func search(name string) bool {
 	searched := make(map[string]bool)
 	searched[name] = true
 	for searchQueue.Len() > 0 {
-		person := searchQueue.Remove(searchQueue.Front()).(string)
+		person := searchQueue.Remove(searchQueue.Front()).(string)  //Таким образом, person := searchQueue.Remove(searchQueue.Front()).(string) удаляет первый элемент из списка searchQueue, 
+		преобразует его тип к string и присваивает его переменной person. В итоге мы получаем строку, содержащую следующий узел для поиска.
 		if !searched[person] {
 			if personIsSeller(person) {
 				fmt.Println(person + " is a mango seller!")
